@@ -15,6 +15,16 @@ app.get("/notes", (req,res)=>{
     res.status(200).json({notes:notes, message:"notes fetched sucessfully"})
 })
 
+app.delete("/notes/:index", (req,res)=>{
+    const index = req.params.index
+    delete notes [index]
+
+    res.status(200).json({
+        message:"note deleted sucessfully"
+    })
+
+})
+
 
 
 module.exports = app
