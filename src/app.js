@@ -7,7 +7,8 @@ app.post("/notes", async (req , res)=>{
     const data = req.body
     await noteModel.create({
         title: data.title,
-        description: data.description
+        description: data.description,  
+        age: data.age
     })
 
     res.status(201).json({
@@ -49,6 +50,9 @@ app.patch("/notes/:id", async(req,res)=>{
         message:"updated sucessfully"
     })
 })
+
+
+
 
 
 
